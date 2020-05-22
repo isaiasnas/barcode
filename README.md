@@ -1,16 +1,27 @@
-# barcode
+# Projeto - Shop
 
-Sistema destinado a leitura de código de barras
+- 1 na pasta `/lib/util/`
+- 2 renomear o arquivo `constants_desenv.dart` para `constants.dart` e seguir as intruções.
+---
 
-## Getting Started
+## SKD - 1.17.1
 
-This project is a starting point for a Flutter application.
+### Versão inicial do projeto.
 
-A few resources to get you started if this is your first Flutter project:
+- [shop](https://github.com/isaiasnas/shop)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Projeto **shop** *e-comerce* ...
+[documentação](https://github.com/isaiasnas/shop/blob/master/README.md)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Frameworks
+- Provider
+
+## Histórico
+
+Versão | Status | Data
+----------|--------|-------------
+0.0.0 | beta | 2020-05-17
+
+## License
+
+[MIT](https://github.com/isaiasnas/shop/blob/master/LICENSE)
