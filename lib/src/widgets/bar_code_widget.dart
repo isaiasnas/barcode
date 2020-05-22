@@ -1,7 +1,14 @@
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
 
-class BarCodeWidget extends StatelessWidget {
+class BarCodeWidget extends StatefulWidget {
+  @override
+  _BarCodeWidgetState createState() => _BarCodeWidgetState();
+}
+
+class _BarCodeWidgetState extends State<BarCodeWidget> {
+  String _raw;
+  String _format;
   Future<void> _scannerBarCode() async {
     var options = ScanOptions(
         android: AndroidOptions(
@@ -11,28 +18,56 @@ class BarCodeWidget extends StatelessWidget {
           'cancel': 'cancelar',
           'flash_on': 'ligar flash camera',
           'flash_off': 'desligar flash camera',
-        }
-        // set the options
-        );
+        });
     var result = await BarcodeScanner.scan(options: options);
-    print(result.type); // The result type (barcode, cancelled, failed)
-    print(result.rawContent); // The barcode content
-    print(result.format); // The barcode format (as enum)
-    print(result
-        .formatNote); // If a unknown format was scanned this field contains a note
+    setState(() {
+      _raw = result.rawContent;
+      _format = result.format.name;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bar code scanner'),
+        title: Text('BAR CODE SCANNER'),
       ),
-      body: Row(
-        children: <Widget>[],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RichText(
+                text: TextSpan(
+                    text: 'Resutado: ',
+                    style: TextStyle(color: Colors.black, fontSize: 15),
+                    children: [
+                  TextSpan(
+                    text: _raw,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontSize: 16),
+                  )
+                ])),
+            RichText(
+                text: TextSpan(
+                    text: 'Formato: ',
+                    style: TextStyle(color: Colors.black, fontSize: 15),
+                    children: [
+                  TextSpan(
+                    text: _format,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontSize: 16),
+                  )
+                ])),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _scannerBarCode,
+        icon: Icon(Icons.camera_alt),
         label: Text('scanner'),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
