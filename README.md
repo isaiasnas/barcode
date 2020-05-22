@@ -1,27 +1,24 @@
-# Projeto - Shop
+# Projeto - barcode
 
-- 1 na pasta `/lib/util/`
-- 2 renomear o arquivo `constants_desenv.dart` para `constants.dart` e seguir as intruções.
+Sistema destinado a leitura de código de barras
 ---
 
 ## SKD - 1.17.1
 
 ### Versão inicial do projeto.
 
-- [shop](https://github.com/isaiasnas/shop)
+- [barcode](https://github.com/isaiasnas/barcode)
 
-Projeto **shop** *e-comerce* ...
-[documentação](https://github.com/isaiasnas/shop/blob/master/README.md)
+Projeto **barcode** *leitor de código de barras* ...
+[documentação](https://github.com/isaiasnas/barcode/blob/master/README.md)
 
-## Frameworks
-- Provider
 
 ## Histórico
 
 Versão | Status | Data
 ----------|--------|-------------
-0.0.0 | beta | 2020-05-17
+0.0.0 | beta | 2020-05-22
 
 ## License
 
-[MIT](https://github.com/isaiasnas/shop/blob/master/LICENSE)
+[MIT](https://github.com/isaiasnas/barcode/blob/master/LICENSE)
